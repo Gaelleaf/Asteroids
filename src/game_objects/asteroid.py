@@ -10,8 +10,8 @@ from game_objects.game_object import GameObject
 
 
 class Asteroid(GameObject):
-    def __init__(self, rank: int = 3, location: QPoint = None):
-        location = location or QPoint(randint(0, config.WINDOW_WIDTH), randint(0, config.WINDOW_HEIGHT))
+    def __init__(self, rank: int = 3, location: QPointF = None):
+        location = location or QPointF(randint(0, config.WINDOW_WIDTH), randint(0, config.WINDOW_HEIGHT))
         size = QSize(rank * 40, rank * 40)
         speed = uniform(1.5, 3)
         degree = randint(0, 11) * 30
@@ -36,25 +36,25 @@ class Asteroid(GameObject):
 
         painter.drawPolygon({
             1: [
-                QPoint(width * 0.5, 0), QPoint(width * 0.75, height * 0.1),
-                QPoint(width * 0.6, height * 0.55), QPoint(width * 0.9, height * 0.8),
-                QPoint(width * 0.9, height * 0.8), QPoint(width * 0.55, height * 0.7),
-                QPoint(width * 0.4, height * 0.85), QPoint(width * 0.25, height * 0.6),
-                QPoint(width * 0.08, height * 0.75), QPoint(width * 0.125, height * 0.5),
-                QPoint(width * 0.04, height * 0.4), QPoint(width * 0.15, height * 0.15)],
+                QPointF(width * 0.5, 0), QPointF(width * 0.75, height * 0.1),
+                QPointF(width * 0.6, height * 0.55), QPointF(width * 0.9, height * 0.8),
+                QPointF(width * 0.9, height * 0.8), QPointF(width * 0.55, height * 0.7),
+                QPointF(width * 0.4, height * 0.85), QPointF(width * 0.25, height * 0.6),
+                QPointF(width * 0.08, height * 0.75), QPointF(width * 0.125, height * 0.5),
+                QPointF(width * 0.04, height * 0.4), QPointF(width * 0.15, height * 0.15)],
             2: [
-                QPoint(width * 0.25, 0), QPoint(width * 0.85, height * 0.15),
-                QPoint(width * 0.9, height * 0.9), QPoint(width * 0.55, height),
-                QPoint(width * 0.35, height * 0.8), QPoint(width * 0.15, height * 0.88),
-                QPoint(width * 0.2, height * 0.6), QPoint(0, height * 0.25),
-                QPoint(width * 0.3, height * 0.45)],
+                QPointF(width * 0.25, 0), QPointF(width * 0.85, height * 0.15),
+                QPointF(width * 0.9, height * 0.9), QPointF(width * 0.55, height),
+                QPointF(width * 0.35, height * 0.8), QPointF(width * 0.15, height * 0.88),
+                QPointF(width * 0.2, height * 0.6), QPointF(0, height * 0.25),
+                QPointF(width * 0.3, height * 0.45)],
             3: [
-                QPoint(width, height), QPoint(width * 0.15, height * 0.95),
-                QPoint(width * 0.075, height * 0.6), QPoint(width * 0.25, height * 0.45),
-                QPoint(width * 0.2, height * 0.15), QPoint(width * 0.5, height * 0.03),
-                QPoint(width * 0.45, height * 0.35), QPoint(width * 0.75, height * 0.2),
-                QPoint(width * 0.9, height * 0.48), QPoint(width, height * 0.55),
-                QPoint(width * 0.8, height * 0.8)]
+                QPointF(width, height), QPointF(width * 0.15, height * 0.95),
+                QPointF(width * 0.075, height * 0.6), QPointF(width * 0.25, height * 0.45),
+                QPointF(width * 0.2, height * 0.15), QPointF(width * 0.5, height * 0.03),
+                QPointF(width * 0.45, height * 0.35), QPointF(width * 0.75, height * 0.2),
+                QPointF(width * 0.9, height * 0.48), QPointF(width, height * 0.55),
+                QPointF(width * 0.8, height * 0.8)]
         }[self.shape])
 
         painter.translate(-self.location.x(), -self.location.y())

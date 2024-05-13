@@ -9,7 +9,7 @@ from abc import ABC, abstractmethod
 
 
 class GameObject(ABC):
-    def __init__(self, location: QPoint, size: QSize, speed: float = 0, degree: int = 0):
+    def __init__(self, location: QPointF, size: QSize, speed: float = 0, degree: int = 0):
         self.location = location
         self.size = size
 

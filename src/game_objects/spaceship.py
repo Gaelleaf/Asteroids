@@ -13,7 +13,7 @@ class Spaceship(GameObject):
 
     def __init__(self):
         super().__init__(
-            QPoint((config.WINDOW_WIDTH - 30) // 2, (config.WINDOW_HEIGHT - 40) // 2),
+            QPointF((config.WINDOW_WIDTH - 30) // 2, (config.WINDOW_HEIGHT - 40) // 2),
             QSize(45, 60)
         )
 

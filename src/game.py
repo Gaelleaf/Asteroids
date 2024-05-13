@@ -55,8 +55,8 @@ class Game:
         self.__asteroids.remove(asteroid)
         self.__score += {1: 100, 2: 50, 3: 20}[asteroid.rank]
         if asteroid.rank > 1:
-            self.__asteroids.append(Asteroid(asteroid.rank - 1, QPoint(asteroid.location)))
-            self.__asteroids.append(Asteroid(asteroid.rank - 1, QPoint(asteroid.location)))
+            self.__asteroids.append(Asteroid(asteroid.rank - 1, QPointF(asteroid.location)))
+            self.__asteroids.append(Asteroid(asteroid.rank - 1, QPointF(asteroid.location)))
 
     def draw(self, painter: QPainter):
         painter.fillRect(0, 0, config.WINDOW_WIDTH, config.WINDOW_HEIGHT, QBrush(Qt.SolidPattern))
